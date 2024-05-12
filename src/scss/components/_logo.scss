@@ -1,0 +1,8 @@
+@use '../abstracts/colors' as abs;
+
+.logo{
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 400;
+    color: abs.$title-color;
+}

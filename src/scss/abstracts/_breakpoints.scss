@@ -1,0 +1,25 @@
+$breakpoints: (
+    mobile-sm: 320px,
+    mobile-md: 480px,
+    mobile-xl: 600px,
+
+    tablet: 786px,
+
+    laptop: 1024px,
+    desktop-sm: 1200px,
+    desktop-md: 1440px,
+    desktop-xl: 1680px,
+
+
+    // Custom
+    desktop-original: 1920px,
+    desktop-xxl: 1900px,
+    desktop-header-bg: 1071px,
+);
+
+
+@mixin breakpoints($size) {
+    @media (max-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}

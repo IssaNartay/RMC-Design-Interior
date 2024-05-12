@@ -1,0 +1,94 @@
+@use '../abstracts' as abs;
+
+.digital {
+	background-color: #23272f;
+	margin-top: 150px;
+
+	&__wrapper{
+		padding: 61px 0;
+		position: relative;
+	}
+
+	&__inner{
+		display: flex;
+		gap: clamp(1.875rem, -33.437rem + 56.5vw, 8.938rem);
+
+		@include abs.breakpoints('laptop'){
+			flex-direction: column;
+		}
+	}
+
+	&__content{
+		position: relative;
+		z-index: 3;
+
+		@include abs.breakpoints('laptop'){
+			order: -1;
+		}
+
+		@include abs.breakpoints('mobile-md'){
+			text-align: center;
+		}
+	}
+
+	&__title{
+		margin-bottom: 50px;
+
+		@include abs.breakpoints('laptop'){
+			max-width: 388px;
+		}
+	}
+
+	&__percent{
+		display: grid;
+		grid-template-columns: repeat(3 , 1fr);
+		gap: clamp(0.938rem, -16.247rem + 27.5vw, 4.375rem);
+		max-width: 455px;
+
+		@include abs.breakpoints('laptop'){
+			display: flex;
+			justify-content: space-between;
+			max-width: 100%;
+			flex-wrap: wrap;
+		}
+
+		@include abs.breakpoints('mobile-md'){
+			display: block;
+			text-align: center;
+		}
+	}
+
+	&__percent-number{
+		color: abs.$accent-color;
+		font-size: clamp(0.938rem, -0.176rem + 5.57vw, 4rem);
+		line-height: minmax(20px , 70px);
+
+		&::after{
+			content: '%';
+			font-size: clamp(0.625rem, 0.167rem + 2.44vw, 2rem);
+		}
+	}
+
+	&__percent-text{
+		color: abs.$text-main-color;
+		font-size: 18px;
+		text-wrap: nowrap;
+		margin-bottom: 50px;
+	}
+
+	&__bg-text{
+		position: absolute;
+		z-index: 2;
+		// background-image: url(../images/rectangle/r-word.png) lightgray 0% 0% / 50px 50px repeat;
+		// background-blend-mode: lighten;
+		font-size: 838px;
+		top: 0;
+		right: 0;
+		line-height: 0.8;
+		color: abs.$bg-text-color;
+
+		@include abs.breakpoints('desktop-sm'){
+			display: none;
+		}
+	}
+}

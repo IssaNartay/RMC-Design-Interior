@@ -1,0 +1,127 @@
+@use "../abstracts" as abs;
+
+.availability__wrapper {
+	margin-top: clamp(3.125rem, 15.63vw, 10rem);
+}
+.availability__text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include abs.breakpoints("laptop") {
+		flex-direction: column;
+		gap: clamp(0.625rem, -0.227rem + 4.26vw, 2.5rem);
+	}
+}
+
+.availability {
+	&__title {
+		font-size: clamp(2.25rem, 1.705rem + 2.73vw, 3.75rem);
+		text-wrap: nowrap;
+	}
+}
+
+.availability__description {
+	max-width: clamp(18.75rem, 14.773rem + 19.89vw, 27.5rem);
+	color: abs.$text-main-color;
+	line-height: 26px; /* 162.5% */
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 2px;
+		height: 150px;
+		background: linear-gradient(
+			180deg,
+			rgba(197, 225, 228, 0) 0%,
+			#c5e1e4 51.56%,
+			rgba(197, 225, 228, 0) 100%
+		);
+		transform: translate(-30px, -50px);
+	}
+
+	@include abs.breakpoints("laptop") {
+		&::before {
+			display: none;
+		}
+	}
+}
+.availability__content {
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+
+	@include abs.breakpoints("laptop") {
+		align-items: center;
+		flex-direction: column;
+		gap: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+	}
+}
+.availability__table {
+	overflow-x: auto;
+	width: 80%;
+	margin: 0 auto;
+	table {
+		text-wrap: nowrap;
+		border-collapse: collapse;
+		margin: 0;
+		padding: 0;
+		table-layout: fixed;
+		// width: 100%;
+	}
+
+	th {
+		color: abs.$accent-color;
+		letter-spacing: 0.8px;
+		text-transform: capitalize;
+		text-align: start;
+		padding: 0 77px 15px 0;
+		border-bottom: 1px solid abs.$text-main-color;
+	}
+
+	th:last-child {
+		padding-right: 0;
+	}
+
+	td {
+		color: abs.$text-main-color;
+		padding: 15px 77px 15px 0;
+		border-bottom: 1px solid abs.$text-main-color;
+		font-family: abs.$font-accent;
+
+		a {
+			color: abs.$text-main-color;
+			text-decoration: underline;
+			transition: all 0.2s ease-in;
+			&:hover {
+				color: abs.$accent-color;
+			}
+		}
+	}
+
+	td:last-child {
+		padding-right: 0;
+	}
+
+	.td-white {
+		color: abs.$title-color;
+	}
+}
+.availability__img {
+	width: clamp(11.875rem, -3.839rem + 24.55vw, 25.625rem);
+
+	@include abs.breakpoints("laptop") {
+		display: none;
+	}
+
+	&--stock {
+		display: none;
+		margin-top: clamp(0.625rem, 0.341rem + 1.42vw, 1.25rem);
+		width: clamp(20rem, 7.784rem + 61.08vw, 46.875rem);
+
+		@include abs.breakpoints("laptop") {
+			display: block;
+		}
+	}
+}

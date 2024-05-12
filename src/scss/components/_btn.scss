@@ -1,0 +1,16 @@
+@use '../abstracts' as abs;
+
+.btn{
+    padding: 15px 30px;
+    color: #fff;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    font-family: abs.$font-accent;
+    transition: all 0.2s ease-in;
+    
+    &:hover{
+        background-color: #fff;
+        color: abs.$bg-color;
+    }
+}
+

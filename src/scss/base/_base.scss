@@ -1,0 +1,47 @@
+@use "../abstracts" as abs;
+
+html,
+body {
+	// zoom: 80%;
+	font-family: abs.$font-main;
+	background-color: abs.$bg-color;
+	background-image: url("../images/header/Rectangle 59.png");
+}
+
+.none {
+	display: none !important;
+}
+
+.container {
+	&--xl {
+		max-width: 1920px;
+		padding: 0 clamp(30px, -27.813rem + 39.58vw, 315px); // Min 1200 Max 1920
+		margin: 0 auto;
+	}
+
+	&--xxl {
+		max-width: 1920px;
+		padding: 0 57px;
+		margin: 0 auto;
+	}
+
+	&--header {
+		max-width: calc(1720px + (100px * 2));
+		padding: 0 clamp(0.938rem, -7.917rem + 11.81vw, 6.25rem);
+		margin: 0 auto;
+	}
+}
+
+.title {
+	// font-size: 60px;
+	font-size: clamp(20px, 0.341rem + 4.55vw, 60px);
+	color: abs.$title-color;
+	font-weight: 400;
+}
+
+.overtitle {
+	color: abs.$accent-color;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 4.8px;
+}

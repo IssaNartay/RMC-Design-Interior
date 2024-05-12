@@ -1,0 +1,20 @@
+@use "../abstracts" as abs;
+
+.decor-text {
+	text-transform: uppercase;
+	color: abs.$bg-text-color;
+	font-weight: 700;
+	font-family: abs.$font-accent;
+	// font-size: clamp(5rem, -4.167rem + 12.22vw, 10.5rem);
+    font-size: 124px;
+
+	@include abs.breakpoints("desktop-xxl") {
+        transform: rotate(180deg);
+        writing-mode: vertical-lr;
+        top: 0;
+        right: 0;
+        margin-bottom: 200px;
+        z-index: -1;
+    }
+
+}

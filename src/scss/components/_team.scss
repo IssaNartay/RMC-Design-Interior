@@ -1,0 +1,87 @@
+@use "../abstracts" as abs;
+
+.team {
+  &__bg-line {
+    max-width: 100%;
+    height: clamp(3.75rem, 1.667rem + 11.11vw, 10rem);
+    position: relative;
+
+		@include abs.breakpoints('mobile-xl'){
+			display: none;
+		}
+  }
+ 
+  &__bg-line-img {
+    position: absolute;
+    transform: translate(0%, 4%);
+    bottom: 0;
+    background-image: url(../images/rectangle/line3.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    width: 100%;
+    height: inherit;
+
+		@include abs.breakpoints('mobile-xl'){
+			display: none;
+		}
+  }
+
+  &__overtitle {
+    margin-bottom: 20px;
+
+		@include abs.breakpoints('mobile-xl'){
+			text-align: center;
+		}
+
+		@include abs.breakpoints('mobile-xl'){
+			margin-top: 20px;
+		}
+  }
+
+  &__title {
+    margin-bottom: clamp(1.563rem, 0.833rem + 3.89vw, 3.75rem);
+
+		@include abs.breakpoints('mobile-xl'){
+			text-align: center;
+		}
+  }
+
+  &__img {
+    margin-bottom: clamp(1.563rem, 0.833rem + 3.89vw, 3.25rem);
+  }
+
+  &__employees {
+    max-width: 1290px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__box {
+    display: flex;
+    color: abs.$title-color;
+    gap: clamp(0.5rem, 2.5vw, 1.875rem);
+    font-size: 24px;
+    font-family: abs.$font-accent;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(171, 174, 183, 0.3);
+  }
+
+  &__name {
+    display: flex;
+    gap: clamp(0.5rem, 2.5vw, 1.875rem);
+		font-size: clamp(0.938rem, 0.733rem + 1.02vw, 1.5rem);
+
+    &::after {
+      content: "-";
+    }
+  }
+
+	&__job {
+		font-size: clamp(0.938rem, 0.733rem + 1.02vw, 1.5rem);
+	}
+}

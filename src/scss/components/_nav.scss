@@ -1,0 +1,95 @@
+@use "../abstracts" as abs;
+
+// HEADER NAV
+
+.nav-list {
+	display: flex;
+	column-gap: 35px;
+	flex-grow: 1;
+	justify-self: start;
+
+	@include abs.breakpoints("laptop") {
+		display: none;
+	}
+}
+
+.nav-list__item {
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.nav {
+	&__logo {
+		flex-basis: 230px;
+	}
+}
+
+.nav__btn {
+	display: none;
+
+	@include abs.breakpoints("laptop") {
+		display: block;
+		transform: rotate(180deg);
+	}
+}
+
+// FOOTER NAV
+
+.footer__nav {
+	padding: 0 150px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 1px;
+		height: 244px;
+		flex-shrink: 0;
+		background: linear-gradient(
+			180deg,
+			rgba(171, 174, 183, 0) 0%,
+			#abaeb7 51.56%,
+			rgba(171, 174, 183, 0) 100%
+		);
+		transform: translate(-150px, -20px);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 1px;
+		height: 244px;
+		flex-shrink: 0;
+		background: linear-gradient(
+			180deg,
+			rgba(171, 174, 183, 0) 0%,
+			#abaeb7 51.56%,
+			rgba(171, 174, 183, 0) 100%
+		);
+		transform: translate(250px, -210px);
+	}
+}
+
+.footer__nav-list {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	text-wrap: nowrap;
+}
+
+.footer__nav-list-item {
+	font-family: abs.$font-accent;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.footer__nav-list-link {
+	color: abs.$text-main-color;
+	transition: all 0.2s ease-in;
+	&--active {
+		color: abs.$accent-color;
+	}
+
+	&:hover {
+		color: abs.$accent-color;
+	}
+}

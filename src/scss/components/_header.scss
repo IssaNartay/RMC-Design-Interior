@@ -1,0 +1,101 @@
+@use "../abstracts" as abs;
+
+.header {
+	z-index: 1;
+	height: 100vh;
+	position: relative;
+	a {
+		color: abs.$text-main-color;
+	}
+
+	&__wrapper {
+		padding-top: 25px;
+	}
+
+	&__bg-img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		max-width: 1071px;
+		height: 1007px;
+		height: 100vh;
+		@include abs.breakpoints("desktop-xxl") {
+			left: 0;
+		}
+
+		@include abs.breakpoints("desktop-header-bg") {
+			position: static;
+			left: 0;
+			margin-top: 100px;
+			display: none;
+		}
+	}
+
+	&__bg-icon {
+		position: absolute;
+		top: calc((198 * 100%) / 678);
+		left: calc((677 * 100%) / 1920);
+
+		@include abs.breakpoints("laptop") {
+			display: none;
+		}
+	}
+
+	&__content {
+		margin-top: clamp(4.563rem, 0.955rem + 18.04vw, 12.5rem);
+	}
+
+	&__overtitle {
+		letter-spacing: 4.8px;
+		color: abs.$accent-color;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		// font-size: 84px;
+		font-size: clamp(2.625rem, 1.432rem + 5.97vw, 5.25rem);
+		// line-height: 94px;
+		line-height: clamp(3.375rem, 2.239rem + 5.68vw, 5.875rem);
+		text-transform: uppercase;
+		color: abs.$title-color;
+		margin-bottom: 10px;
+		max-width: 680px;
+	}
+
+	&__text {
+		color: abs.$text-main-color;
+		font-size: 20px;
+		max-width: 534px;
+		margin-bottom: 50px;
+	}
+
+	&__bg-line {
+		position: absolute;
+		top: 97px;
+		left: 0;
+		z-index: -2;
+		width: 889px;
+		height: 759px;
+	}
+
+	&__bg-text {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		transform: translate(0, 50px);
+	}
+
+	.header__btn {
+		@include abs.breakpoints("laptop") {
+			display: none;
+		}
+	}
+}
+
+.header__nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

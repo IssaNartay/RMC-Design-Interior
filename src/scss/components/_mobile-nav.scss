@@ -1,0 +1,80 @@
+@use "../abstracts" as abs;
+
+.mobile-nav-wrapper {
+	display: none;
+	z-index: 9;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 320px;
+
+	padding: 30px 30px;
+	background-color: abs.$bg-color;
+	color: abs.$title-color;
+
+	animation: smoothScrollOpen 0.3s ease-out;
+	transition: transform 0.2s ease-in;
+
+	a {
+		color: abs.$title-color;
+	}
+
+	&--open {
+		display: block;
+	}
+}
+
+.mobile-nav-header {
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	margin-bottom: 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.mobile-nav {
+	display: grid;
+	gap: 20px;
+	font-size: 22px;
+}
+
+.mobile-sub-nav {
+	display: grid;
+	gap: 12px;
+	padding: 20px 0 0 20px;
+	font-size: 16px;
+}
+
+.mobile-nav__link--margin {
+	display: inline-block;
+	padding: 7px 15px;
+	font-size: 14px;
+}
+
+.mobile-nav-wrapper--close{
+	animation: smoothScrollClose 0.3s ease-out;
+}
+
+@keyframes smoothScrollOpen {
+	0% {
+		transform: translate(100%, 0);
+	}
+
+	100% {
+		transform: translate(0%, 0%);
+	}
+}
+
+@keyframes smoothScrollClose {
+	0% {
+		transform: translate(0%, 0%);
+	}
+
+	100% {
+		transform: translate(100%, 0);
+	}
+}

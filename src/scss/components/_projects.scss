@@ -1,0 +1,129 @@
+@use "../abstracts" as abs;
+
+.projects__wrapper {
+	margin-top: clamp(3.125rem, 0.568rem + 12.78vw, 8.75rem);
+}
+.project__heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include abs.breakpoints("laptop") {
+		flex-direction: column;
+	}
+}
+
+.project__text {
+	&-title {
+		font-size: clamp(2.25rem, 1.705rem + 2.73vw, 3.75rem);
+		text-wrap: nowrap;
+	}
+}
+
+.project__tabs {
+	align-self: flex-end;
+	@include abs.breakpoints("laptop") {
+		align-self: center;
+		margin-top: clamp(0.625rem, -0.057rem + 3.41vw, 2.5rem);
+	}
+}
+
+.tab-controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: clamp(1.25rem, 0.682rem + 2.84vw, 2.5rem);
+	margin-bottom: 20px;
+}
+
+.tab-controls__btn {
+	color: abs.$text-main-color;
+	transition: all 0.2s ease-in;
+	font-size: clamp(0.75rem, 0.636rem + 0.57vw, 1rem);
+	text-wrap: nowrap;
+	&:hover {
+		color: abs.$accent-color;
+	}
+}
+
+.tab-controls__btn--active {
+	color: abs.$accent-color;
+	border-bottom: 1px solid abs.$accent-color;
+}
+
+.project__images {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 20px;
+	margin-top: clamp(0.625rem, -0.284rem + 4.55vw, 3.125rem);
+
+	@include abs.breakpoints("laptop") {
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+	}
+}
+
+.project__images-img {
+	&:nth-child(even) {
+		margin-top: 20px;
+	}
+
+	@include abs.breakpoints("laptop") {
+		&:nth-child(n + 5) {
+			display: none;
+		}
+
+		&:nth-child(odd) {
+			justify-self: end;
+		}
+
+		&:nth-child(even) {
+			justify-self: start;
+		}
+	}
+}
+
+// .project__images {
+// 	display: grid;
+// 	justify-content: center;
+// 	grid-template-columns: repeat(
+// 		4,
+// 		clamp(12.5rem, 7.865rem + 9.44vw, 19.188rem)
+// 	); // 307px
+// 	grid-template-rows: repeat(
+// 		2,
+// 		clamp(16.875rem, 14rem + 14.37vw, 31.25rem)
+// 	); // 500px
+// 	margin-top: 50px;
+// 	gap: clamp(0.625rem, 0.5rem + 0.63vw, 1.25rem);
+
+// 	@include abs.breakpoints("laptop") {
+// 		gap: clamp(0.625rem, 0.5rem + 0.63vw, 1.25rem);
+
+// 		grid-template-columns: repeat(
+// 			2,
+// 			clamp(12.5rem, 7.865rem + 9.44vw, 19.188rem)
+// 		);
+// 		grid-template-rows: repeat(2, clamp(16.875rem, 14rem + 14.37vw, 31.25rem));
+// 	}
+// }
+
+// .project__images-img {
+// 	width: clamp(12.5rem, 7.865rem + 9.44vw, 19.188rem);
+
+// &:nth-child(even) {
+// 	margin-top: 50px;
+// }
+
+// 	@include abs.breakpoints("laptop") {
+// 		&:nth-child(even) {
+// 			margin-top: 100px;
+// 		}
+// 	}
+
+// @include abs.breakpoints("laptop") {
+// 	&:nth-child(n + 5) {
+// 		display: none;
+// 	}
+// }
+// }
